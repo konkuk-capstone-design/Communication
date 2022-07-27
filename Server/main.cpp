@@ -1,4 +1,4 @@
-ï»¿//#include "stdafx.h"
+//#include "stdafx.h"
 //#include <conio.h>
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
@@ -33,26 +33,26 @@ int main()
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
 
 	SOCKET hListen;
-	hListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  // ì¸ì ìˆœì„œëŒ€ë¡œ IPV4, ì—°ê²°ì§€í–¥í˜• ì†Œì¼“, TCP í”„ë¡œí† ì½œ ì˜ë¯¸
+	hListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  // ÀÎÀÚ ¼ø¼­´ë·Î IPV4, ¿¬°áÁöÇâÇü ¼ÒÄÏ, TCP ÇÁ·ÎÅäÄİ ÀÇ¹Ì
 
 	SOCKADDR_IN tListenAddr = {};
-	tListenAddr.sin_family = AF_INET;    // ê³ ì •ê°’
-	tListenAddr.sin_port = htons(PORT);  // PORT ì£¼ì†Œ
-	tListenAddr.sin_addr.s_addr = htonl(INADDR_ANY); // IP ì£¼ì†Œ (s_addrì€ IPV4ë¥¼ ì˜ë¯¸)
+	tListenAddr.sin_family = AF_INET;    // °íÁ¤°ª
+	tListenAddr.sin_port = htons(PORT);  // PORT ÁÖ¼Ò
+	tListenAddr.sin_addr.s_addr = htonl(INADDR_ANY); // IP ÁÖ¼Ò (s_addrÀº IPV4¸¦ ÀÇ¹Ì)
 
-	bind(hListen, (SOCKADDR*)&tListenAddr, sizeof(tListenAddr));  // ì†Œì¼“ì— ì£¼ì†Œì •ë³´ë¥¼ ì „ë‹¬
-	listen(hListen, SOMAXCONN);   // ì†Œì¼“ì„ ì ‘ì† ëŒ€ê¸° ìƒíƒœë¡œ ë§Œë“¦, ë‘ë²ˆì§¸ ì¸ìëŠ” í•œêº¼ë²ˆì— ìš”ì²­ ê°€ëŠ¥í•œ ìµœëŒ€ ì ‘ì†ìŠ¹ì¸ ìˆ˜
+	bind(hListen, (SOCKADDR*)&tListenAddr, sizeof(tListenAddr));  // ¼ÒÄÏ¿¡ ÁÖ¼ÒÁ¤º¸¸¦ Àü´Ş
+	listen(hListen, SOMAXCONN);   // ¼ÒÄÏÀ» Á¢¼Ó ´ë±â »óÅÂ·Î ¸¸µê, µÎ¹øÂ° ÀÎÀÚ´Â ÇÑ²¨¹ø¿¡ ¿äÃ» °¡´ÉÇÑ ÃÖ´ë Á¢¼Ó½ÂÀÎ ¼ö
 
 	SOCKADDR_IN tClntAddr = {};
 	int iClntSize = sizeof(tClntAddr);
-	SOCKET hClient = accept(hListen, (SOCKADDR*)&tClntAddr, &iClntSize); // ì¸ì ìˆœì„œëŒ€ë¡œ ì†Œì¼“, acceptí•  í´ë¼ì´ì–¸íŠ¸ì¸¡ ì£¼ì†Œì •ë³´ êµ¬ì¡°ì²´ì˜ ì£¼ì†Œê°€ ë“¤ì–´ê°ˆ ê³³, ë‘ë²ˆì§¸ ì¸ìë¡œ ë„£ì€ êµ¬ì¡°ì²´ì˜ í¬ê¸°ë¥¼ ì €ì¥í•´ë‘” ë³€ìˆ˜ì˜ ì£¼ì†Œ
+	SOCKET hClient = accept(hListen, (SOCKADDR*)&tClntAddr, &iClntSize); // ÀÎÀÚ ¼ø¼­´ë·Î ¼ÒÄÏ, acceptÇÒ Å¬¶óÀÌ¾ğÆ®Ãø ÁÖ¼ÒÁ¤º¸ ±¸Á¶Ã¼ÀÇ ÁÖ¼Ò°¡ µé¾î°¥ °÷, µÎ¹øÂ° ÀÎÀÚ·Î ³ÖÀº ±¸Á¶Ã¼ÀÇ Å©±â¸¦ ÀúÀåÇØµĞ º¯¼öÀÇ ÁÖ¼Ò
 
 	char cBuffer[PACKET_SIZE] = {};
-	recv(hClient, cBuffer, PACKET_SIZE, 0);  // ëŒ€ìƒ ì†Œì¼“ìœ¼ë¡œë¶€í„° ë³´ë‚´ì˜¨ ì •ë³´ë¥¼ ë°›ì•„ì£¼ëŠ” ì—­í• 
+	recv(hClient, cBuffer, PACKET_SIZE, 0);  // ´ë»ó ¼ÒÄÏÀ¸·ÎºÎÅÍ º¸³»¿Â Á¤º¸¸¦ ¹Ş¾ÆÁÖ´Â ¿ªÇÒ
 	printf("Recv Msg : %s\n", cBuffer);
 
 	char cMsg[] = "Server Send";
-	send(hClient, cMsg, strlen(cMsg), 0);  // ì„œë²„ê°€ ë©”ì„¸ì§€ë¥¼ í´ë¼ì´ì–¸íŠ¸ì¸¡ì— ì „ë‹¬
+	send(hClient, cMsg, strlen(cMsg), 0);  // ¼­¹ö°¡ ¸Ş¼¼Áö¸¦ Å¬¶óÀÌ¾ğÆ®Ãø¿¡ Àü´Ş
 
 
 	Mat image;
