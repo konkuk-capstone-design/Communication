@@ -21,14 +21,16 @@
 #define PACKET_SIZE 1024
 
 using namespace cv;
-
+/*
 int SENDKEY(SOCKET hClient);
 int RECVKEY(SOCKET hSocket, char key[2]);
 void SENDMAT(Mat image, SOCKET hClient);
 Mat RECVMAT(SOCKET hSocket);
 clock_t a, b, c;
+*/
 int main()
 {
+	/*
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
 
@@ -71,9 +73,11 @@ int main()
 	closesocket(hClient);
 	closesocket(hListen);
 	WSACleanup();
+	*/
 	return 0;
 
 }
+/*
 int SENDKEY(SOCKET hSocket)
 {
 	char key[2] = { 'n','n' };
@@ -199,3 +203,4 @@ Mat RECVMAT(SOCKET hSocket)
 	c = clock();
 	return image;
 }
+*/
