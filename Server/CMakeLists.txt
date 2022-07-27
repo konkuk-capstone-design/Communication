@@ -46,3 +46,10 @@ TARGET_LINK_LIBRARIES(socket++_int socket_int)
 
 INSTALL(TARGETS socket++_int DESTINATION ${LIB_DIR})
 ENDIF()
+
+project(Server)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+add_executable(Server main.cpp)
+target_link_libraries(Server ${OpenCV_LIBS})
+set(CMAKE_EXTRA_INCLUDE_FILES sys/socket.h)
