@@ -5,7 +5,7 @@
 #include <unistd.h>			//#include <WinSock2.h>
 #include <arpa/inet.h>		//...
 #include <sys/socket.h>		//...
-#include <curses.h>			//#include <Windows.h>
+//#include <curses.h>			//#include <Windows.h>
 
 #include <stdio.h>
 #include <iostream>
