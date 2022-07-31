@@ -5,7 +5,3 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(Server main.cpp)
 target_link_libraries(Server ${OpenCV_LIBS})
 set(CMAKE_EXTRA_INCLUDE_FILES sys/socket.h)
-
-#set(CMAKE_EXTRA_INCLUDE_FILES unistd.h)
-#set(CMAKE_EXTRA_INCLUDE_FILES arpa/inet.h)
-#set(CMAKE_EXTRA_INCLUDE_FILES sys/types.h)
