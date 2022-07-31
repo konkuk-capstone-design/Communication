@@ -2,10 +2,12 @@
 //#include <conio.h>
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 
-//#include <unistd.h>			//#include <WinSock2.h>
-//#include <arpa/inet.h>		//...
+#include <unistd.h>			//#include <WinSock2.h>
+#include <arpa/inet.h>		//...
 #include <sys/socket.h>		//...
-//#include <curses.h>	    //#include <Windows.h>
+#include <sys/types.h>
+
+#include <curses.h>	    //#include <Windows.h>
 
 #include <stdio.h>
 #include <iostream>
