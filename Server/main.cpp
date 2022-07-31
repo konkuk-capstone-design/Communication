@@ -1,6 +1,7 @@
 //#include "stdafx.h"
 //#include <conio.h>
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
+#pragma comment(lib,"ws2_32")
 
 //#include <unistd.h>			//#include <WinSock2.h>
 //#include <arpa/inet.h>		//...
@@ -17,7 +18,6 @@
 #include <fstream>
 #include <opencv2/imgproc.hpp>
 
-#pragma comment(lib,"ws2_32")
 
 #define PORT 4578
 #define PACKET_SIZE 1024
