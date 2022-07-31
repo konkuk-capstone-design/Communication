@@ -7,7 +7,7 @@
 #include <sys/socket.h>		//...
 #include <sys/types.h>
 
-#include <curses.h>	    //#include <Windows.h>
+//#include <curses.h>	    //#include <Windows.h>
 
 #include <stdio.h>
 #include <iostream>
