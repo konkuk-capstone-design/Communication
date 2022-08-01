@@ -17,7 +17,6 @@
 
 #define PORT 4578
 #define PACKET_SIZE 1024
-#define SERVER_IP "192.168.200.109"
 
 using namespace cv;
 
@@ -31,6 +30,7 @@ int main()
 	if (clnt_sock == -1)
 		printf("socket error\n");
 
+	char SERVER_IP[] = "192.168.200.109";
 	memset(&serv_addr, 0, sizeof(serv_addr));
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_addr.s_addr = inet_addr(SERVER_IP);
