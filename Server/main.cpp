@@ -25,9 +25,19 @@ using namespace cv;
 
 int main()
 {
+	int serv_sock;
+	int clnt_sock;
+
+	struct sockaddr_in serv_addr;
+	struct sockaddr_in clnt_addr;
+	socklen_t clnt_addr_size;
+
+	serv_sock = socket(PF_INET, SOCK_STREAM, 0);
+	memset(&serv_addr, 0, sizeof(serv_addr));
+
+	/*
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
-	/*
 	SOCKET hListen;
 	hListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  // 인자 순서대로 IPV4, 연결지향형 소켓, TCP 프로토콜 의미
 
