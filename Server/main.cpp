@@ -18,6 +18,7 @@
 #define PORT 4578
 #define PACKET_SIZE 1024
 
+using namespace cv;
 //int SENDKEY(SOCKET hClient);
 //int RECVKEY(SOCKET hSocket, char key[2]);
 //void SENDMAT(Mat image, SOCKET hClient);
