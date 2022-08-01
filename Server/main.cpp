@@ -202,5 +202,11 @@ int main()
 	struct sockaddr_in addrClient;
 	socklen_t addrClient_sz;
 
+	while (1)
+	{
+		printf("helloworld");
+	}
+
+
 	return 0;
 }
