@@ -2,7 +2,7 @@
 #pragma comment(lib,"ws2_32")
 
 #include <unistd.h>
-#include <arpa/inet.>
+#include <arpa/inet.h>
 #include <sys/socket.h>		
 #include <sys/types.h>
 
