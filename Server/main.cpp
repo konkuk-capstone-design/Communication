@@ -43,7 +43,7 @@ int main()
 	serv_addr.sin_port = htons(PORT);
 
 	if (bind(serv_sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1)
-		printf("bind error\n");
+		printf("bind error\n")
 
 	if (listen(serv_sock, 5) == -1)
 		printf("listen error\n");
@@ -62,8 +62,8 @@ int main()
 	return 0;
 
 }
-
-int SENDKEY(SOCKET hSocket)
+/*
+int SENDKEY(int clnt_sock)
 {
 	char key[2] = { 'n','n' };
 
@@ -71,7 +71,7 @@ int SENDKEY(SOCKET hSocket)
 	{
 		key[0] = key[1] = 'q';
 
-		send(hSocket, key, 2, 0);
+		write(clnt_sock, key, sizeof(key));
 		return 1;
 	}
 	else
@@ -96,7 +96,7 @@ int SENDKEY(SOCKET hSocket)
 		return 0;
 	}
 }
-/*
+
 int RECVKEY(SOCKET hSocket, char key[2])
 {
 	key[0] = key[1] = 'q';
