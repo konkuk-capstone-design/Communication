@@ -1,4 +1,3 @@
-//#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #pragma comment(lib,"ws2_32")
 
 #include <unistd.h>
@@ -19,17 +18,16 @@ using namespace cv;
 #define PORT 4578
 #define PACKET_SIZE 1024
 
-/*
-int SENDKEY(SOCKET hClient);
-int RECVKEY(SOCKET hSocket, char key[2]);
-void SENDMAT(Mat image, SOCKET hClient);
-Mat RECVMAT(SOCKET hSocket);
+//int SENDKEY(SOCKET hClient);
+//int RECVKEY(SOCKET hSocket, char key[2]);
+//void SENDMAT(Mat image, SOCKET hClient);
+//Mat RECVMAT(SOCKET hSocket);
 
 int main()
 {
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
-
+	/*
 	SOCKET hListen;
 	hListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);  // 인자 순서대로 IPV4, 연결지향형 소켓, TCP 프로토콜 의미
 
@@ -37,7 +35,7 @@ int main()
 	tListenAddr.sin_family = AF_INET;    // 고정값
 	tListenAddr.sin_port = htons(PORT);  // PORT 주소
 	tListenAddr.sin_addr.s_addr = htonl(INADDR_ANY); // IP 주소 (s_addr은 IPV4를 의미)
-
+	
 	bind(hListen, (SOCKADDR*)&tListenAddr, sizeof(tListenAddr));  // 소켓에 주소정보를 전달
 	listen(hListen, SOMAXCONN);   // 소켓을 접속 대기 상태로 만듦, 두번째 인자는 한꺼번에 요청 가능한 최대 접속승인 수
 
@@ -52,7 +50,6 @@ int main()
 	char cMsg[] = "Server Send";
 	send(hClient, cMsg, strlen(cMsg), 0);  // 서버가 메세지를 클라이언트측에 전달
 
-
 	Mat image;
 	while (1)
 	{
@@ -63,14 +60,21 @@ int main()
 		if (SENDKEY(hClient))
 			break;
 	}
-
+	
 	closesocket(hClient);
 	closesocket(hListen);
 
 	WSACleanup();
+	*/
+
+
+
+	while (1)
+		print("hello jinwon!");
 	return 0;
 
 }
+/*
 int SENDKEY(SOCKET hSocket)
 {
 	char key[2] = { 'n','n' };
@@ -195,18 +199,3 @@ Mat RECVMAT(SOCKET hSocket)
 	return image;
 }
 */
-
-int main()
-{
-	struct sockaddr_in addrServer;
-	struct sockaddr_in addrClient;
-	socklen_t addrClient_sz;
-
-	while (1)
-	{
-		printf("helloworld");
-	}
-
-
-	return 0;
-}
