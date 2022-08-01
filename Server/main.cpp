@@ -42,6 +42,8 @@ int main()
 	if (bind(serv_sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) == -1)
 		printf("bind error\n");
 
+	if (listen(serv_sock, 5) == -1)
+		printf("listen error\n");
 	/*
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
