@@ -88,8 +88,8 @@ void SENDMAT(Mat image, int clnt_sock)
 	char rows[4];
 	char cols[4];
 	int size = image.rows * image.cols * image.channels();
-	strcpy_s(rows, std::to_string(image.rows).c_str());
-	strcpy_s(cols, std::to_string(image.cols).c_str());
+	strcpy(rows, std::to_string(image.rows).c_str());
+	strcpy(cols, std::to_string(image.cols).c_str());
 	char* buffer = new char[size];
 
 	for (int i = 0; i < 4 - std::to_string(image.rows).size(); i++)
