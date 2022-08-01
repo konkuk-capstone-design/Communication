@@ -1,14 +1,10 @@
-//#include "stdafx.h"
-//#include <conio.h>
-#define _WINSOCK_DEPRECATED_NO_WARNINGS
+//#define _WINSOCK_DEPRECATED_NO_WARNINGS
 #pragma comment(lib,"ws2_32")
 
-//#include <unistd.h>			//#include <WinSock2.h>
-//#include <arpa/inet.h>		//...
-#include <sys/socket.h>		//...
-//#include <sys/types.h>
-
-//#include <curses.h>	    //#include <Windows.h>
+#include <unistd.h>
+#include <arpa/inet.>
+#include <sys/socket.h>		
+#include <sys/types.h>
 
 #include <stdio.h>
 #include <iostream>
@@ -18,17 +14,16 @@
 #include <fstream>
 #include <opencv2/imgproc.hpp>
 
+using namespace cv;
 
 #define PORT 4578
 #define PACKET_SIZE 1024
 
-using namespace cv;
-
+/*
 int SENDKEY(SOCKET hClient);
 int RECVKEY(SOCKET hSocket, char key[2]);
 void SENDMAT(Mat image, SOCKET hClient);
 Mat RECVMAT(SOCKET hSocket);
-clock_t a, b, c;
 
 int main()
 {
@@ -62,8 +57,6 @@ int main()
 	while (1)
 	{
 		image = RECVMAT(hClient);
-		//printf("Receiving Time: %d\n", (b - a));
-		//printf("Processing Time: %d\n", (c - b));
 		imshow("image", image);
 		waitKey(1);
 
@@ -134,7 +127,6 @@ int RECVKEY(SOCKET hSocket, char key[2])
 }
 void SENDMAT(Mat image, SOCKET hSocket)
 {
-	a = clock();
 	char rows[4];
 	char cols[4];
 	int size = image.rows * image.cols * image.channels();
@@ -147,11 +139,11 @@ void SENDMAT(Mat image, SOCKET hSocket)
 	for (int i = 0; i < 4 - std::to_string(image.cols).size(); i++)
 		cols[3 - i] = -1;
 	memcpy(buffer, image.data, size);
-	b = clock();
+	
 	send(hSocket, rows, 4, 0);
 	send(hSocket, cols, 4, 0);
 	send(hSocket, buffer, size, 0);
-	c = clock();
+	
 	delete[]buffer;
 }
 Mat RECVMAT(SOCKET hSocket)
@@ -181,13 +173,13 @@ Mat RECVMAT(SOCKET hSocket)
 
 	size = row * col * 3;
 	buffer = new char[size];
-	a = clock();
+	
 	for (int i = 0; i < size; i += recvbytes)
 	{
 		if ((recvbytes = recv(hSocket, buffer + i, row * col * 3 - i, 0)) == -1)
 			break;
 	}
-	b = clock();
+	
 	recvbytes = 0;
 	Mat  image = Mat::zeros(row, col, CV_8UC3);
 	for (int i = 0; i < row; i++)
@@ -200,6 +192,15 @@ Mat RECVMAT(SOCKET hSocket)
 	}
 
 	delete[]buffer;
-	c = clock();
 	return image;
+}
+*/
+
+int main()
+{
+	struct sockaddr_in addrServer;
+	struct sockaddr_in addrClient;
+	socklen_t addrClient_sz;
+
+	return 0;
 }
