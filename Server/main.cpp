@@ -45,7 +45,8 @@ int main()
 	if (listen(serv_sock, 5) == -1)
 		printf("listen error\n");
 
-	clnt_addr_size=sizeof(clnt_)
+	clnt_addr_size = sizeof(clnt_addr);
+	clnt_sock = accept(serv_sock, (struct sockaddr*)&clnt_addr, &clnt_addr_size);
 	/*
 	WSADATA wsaData;
 	WSAStartup(MAKEWORD(2, 2), &wsaData);
