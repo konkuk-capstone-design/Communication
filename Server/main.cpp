@@ -12,10 +12,8 @@
 #include <time.h>
 
 #include <opencv2/opencv.hpp>
-#include <fstream>
 #include <opencv2/imgproc.hpp>
-
-using namespace cv;
+#include <fstream>
 
 #define PORT 4578
 #define PACKET_SIZE 1024
@@ -89,7 +87,7 @@ int main()
 
 
 	while (1)
-		print("hello jinwon!");
+		printf("hello jinwon!");
 	return 0;
 
 }
