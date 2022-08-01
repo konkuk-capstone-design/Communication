@@ -21,7 +21,7 @@
 using namespace cv;
 
 int RECVKEY(int clnt_sock, char key[2]);
-void SENDMAT(Mat image, int clnt_sock)
+void SENDMAT(Mat image, int clnt_sock);
 int main()
 {
 	int clnt_sock;
@@ -65,7 +65,7 @@ int main()
 int RECVKEY(int clnt_sock, char key[2])
 {
 	key[0] = key[1] = 'q';
-	read(clnt_sock, key, sizeof(key));
+	read(clnt_sock, key, 2);
 
 	if (key[0] == 'q')
 		return 1;
@@ -100,9 +100,9 @@ void SENDMAT(Mat image, int clnt_sock)
 	
 
 	//write(clnt_sock, msg, sizeof(msg));
-	write(clnt_sock, rows, sizeof(rows));
-	write(clnt_sock, cols, sizeof(cols));
-	write(clnt_sock, buffer, sizeof(buffer));
+	write(clnt_sock, rows, 4);
+	write(clnt_sock, cols, 4);
+	write(clnt_sock, buffer, size);
 	
 	delete[]buffer;
 }
