@@ -20,7 +20,7 @@
 
 using namespace cv;
 
-int RECVKEY(int clnt_sock, char key[2]);
+int RECVKEY(char key[2], int socket);
 void SENDMAT(Mat image, int clnt_sock);
 int main()
 {
@@ -55,17 +55,17 @@ int main()
 		capture >> image;
 		SENDMAT(image, clnt_sock);
 
-		if (RECVKEY(clnt_sock, key))
+		if (RECVKEY(key, clnt_sock))
 			break;
 	}
 
 	close(clnt_sock);
 	return 0;
 }
-int RECVKEY(int clnt_sock, char key[2])
+int RECVKEY(char key[2], int socket)
 {
 	key[0] = key[1] = 'q';
-	read(clnt_sock, key, 2);
+	read(socket, key, 2);
 
 	if (key[0] == 'q')
 		return 1;
@@ -83,7 +83,7 @@ int RECVKEY(int clnt_sock, char key[2])
 		return 0;
 	}
 }
-void SENDMAT(Mat image, int clnt_sock)
+void SENDMAT(Mat image, int socket)
 {
 	char rows[4];
 	char cols[4];
@@ -100,9 +100,9 @@ void SENDMAT(Mat image, int clnt_sock)
 	
 
 	//write(clnt_sock, msg, sizeof(msg));
-	write(clnt_sock, rows, 4);
-	write(clnt_sock, cols, 4);
-	write(clnt_sock, buffer, size);
+	write(socket, rows, 4);
+	write(socket, cols, 4);
+	write(socket, buffer, size);
 	
 	delete[]buffer;
 }
