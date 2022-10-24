@@ -3,12 +3,5 @@ project(Communication)
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 add_executable(Communication main.cpp)
-target_link_libraries(Communication ${OpenCV_LIBS})
-
-find_package(WiringPi REQUIRED)
-find_package(Threads REQUIRED) 
-
-include_directories(${WIRINGPI_INCLUDE_DIRS}) 
-
-target_link_libraries(Communication ${WIRINGPI_LIBRARIES}) 
-target_link_libraries(Communication ${CMAKE_THREAD_LIBS_INIT}) 
+target_link_libraries(Communication ${OpenCV_LIBS} ${wiringPi})
+add_definitions(-std=c++0x -L/home/pi/wiringPi/wiringPi -lwiringPi)
