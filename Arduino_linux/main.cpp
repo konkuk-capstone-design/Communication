@@ -44,14 +44,22 @@ void setup()
     }
 
 }
-void loop() {
+int flag = 0;
+void loop()
+{
     // Pong every 3 seconds
-    if (millis() - time >= 3000)
+    if (millis() - time <= 3000)
     {
-        serialPuts(fd, "Pong!\n");
-        // you can also write data from 0-255
-        // 65 is in ASCII 'A'
-        serialPutchar(fd, 65);
+        if (flag == 0)
+        {
+            serialPutchar(fd, 'w');
+            flag = 1;
+        }
+        else
+        {
+            serialPutchar(fd, 's');
+            flag = 0;
+        }
         time = millis();
     }
 
