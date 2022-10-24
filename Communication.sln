@@ -7,30 +7,56 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arduino_win", "Arduino\Ardu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arduino_linux", "Arduino_linux\Arduino_linux.vcxproj", "{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "A", "A\A.vcxproj", "{2527376E-CD2C-4410-8ACF-B7016411ABA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|ARM64 = Debug|ARM64
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|ARM64 = Release|ARM64
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|ARM.ActiveCfg = Debug|Win32
+		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|ARM64.ActiveCfg = Debug|Win32
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|x64.ActiveCfg = Debug|x64
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|x64.Build.0 = Debug|x64
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|x86.ActiveCfg = Debug|Win32
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Debug|x86.Build.0 = Debug|Win32
+		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|ARM.ActiveCfg = Release|Win32
+		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|ARM64.ActiveCfg = Release|Win32
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|x64.ActiveCfg = Release|x64
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|x64.Build.0 = Release|x64
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|x86.ActiveCfg = Release|Win32
 		{ACCC5F70-1D75-4863-B2B1-541AEFE38823}.Release|x86.Build.0 = Release|Win32
+		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|ARM.ActiveCfg = Debug|Win32
+		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|ARM64.ActiveCfg = Debug|Win32
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|x64.ActiveCfg = Debug|x64
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|x64.Build.0 = Debug|x64
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|x86.ActiveCfg = Debug|Win32
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Debug|x86.Build.0 = Debug|Win32
+		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|ARM.ActiveCfg = Release|Win32
+		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|ARM64.ActiveCfg = Release|Win32
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|x64.ActiveCfg = Release|x64
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|x64.Build.0 = Release|x64
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|x86.ActiveCfg = Release|Win32
 		{02CBC71B-D388-4C6C-9E5E-0BC3B610F05A}.Release|x86.Build.0 = Release|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|ARM.ActiveCfg = Debug|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|x64.ActiveCfg = Debug|x64
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|x64.Build.0 = Debug|x64
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|x86.ActiveCfg = Debug|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Debug|x86.Build.0 = Debug|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|ARM.ActiveCfg = Release|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|ARM64.ActiveCfg = Release|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|x64.ActiveCfg = Release|x64
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|x64.Build.0 = Release|x64
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|x86.ActiveCfg = Release|Win32
+		{2527376E-CD2C-4410-8ACF-B7016411ABA6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
