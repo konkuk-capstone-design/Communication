@@ -51,12 +51,12 @@ void loop()
     {
         if (flag == 0)
         {
-            serialPutchar(fd, 'w');
+            serialPutchar(fd, 119);
             flag = 1;
         }
         else
         {
-            serialPutchar(fd, 's');
+            serialPutchar(fd, 115);
             flag = 0;
         }
         time = millis();
