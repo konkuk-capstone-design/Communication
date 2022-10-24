@@ -47,7 +47,7 @@ int flag = 0;
 void loop()
 {
     // Pong every 3 seconds
-    if (millis() - time <= 3000)
+    if (millis() - time >= 3000)
     {
         if (flag == 0)
         {
