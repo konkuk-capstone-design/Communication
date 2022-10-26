@@ -61,9 +61,12 @@ int main()
 
 	fd = 0;
 	char key[2];
+	int te = 0;
 	while (1)
 	{
+		te++;
 		RECVKEY(key, 2, clnt_sock);
+		printf("%d: %c %c\n",te, key[0], key[1]);
 		if (key[0] == 'q')
 			break;
 		else if ((key[0] == 'n') && (key[1] == 'n'))
@@ -72,7 +75,7 @@ int main()
 		}
 		else
 		{
-			printf("%c %c\n", key[0], key[1]);
+
 		}
 	}
 	close(clnt_sock);
