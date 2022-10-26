@@ -80,5 +80,5 @@ void SENDKEY(SOCKET hClient, char* key, int size)
 }
 void RECVKEY(SOCKET hClient, char* key, int size)
 {
-	recv(hSocket, key, size, 0);
+	recv(hClient, key, size, 0);
 }
