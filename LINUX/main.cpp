@@ -19,8 +19,7 @@
 #define PORT 4578
 #define PACKET_SIZE 1024
 
-int BLOBSIZE(std::string weight);
-int RECVKEY(char key[2], int socket);
+void RECVKEY(char key[2], int size, int socket);
 int fd = 0;
 int main()
 {
