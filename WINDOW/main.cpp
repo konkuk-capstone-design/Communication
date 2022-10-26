@@ -10,11 +10,8 @@
 #define PACKET_SIZE 1024
 
 
-int BLOBSIZE(std::string weight);
-int SENDKEY(SOCKET hClient);
-int RECVKEY(SOCKET hSocket, char key[2]);
-
-
+void SENDKEY(SOCKET hClient, char* key, int size);
+void RECVKEY(SOCKET hClient, char* key, int size);
 int main()
 {
 	WSADATA wsaData;
@@ -42,10 +39,12 @@ int main()
 	char cMsg[] = "Server Send";
 	send(hClient, cMsg, strlen(cMsg), 0);  // 서버가 메세지를 클라이언트측에 전달
 
+	char key[2];
 	while (1)
 	{
-		if (SENDKEY(hClient))
-			break;
+		key[0] = key[1] = 'n';
+		SENDKEY(hClient, key, 2);
+
 	}
 
 	closesocket(hListen);
@@ -55,48 +54,13 @@ int main()
 
 	return 0;
 }
-int BLOBSIZE(std::string weight)
+void SENDKEY(SOCKET hClient, char* key, int size)
 {
-	int iter = 0;
-	int tmp = 0;
-	int check = 0;
-	int result = 0;
-
-	while (1)
-	{
-		if (check)
-		{
-			if (check == 1)
-				result += (weight[iter] - '0') * 100;
-			else if (check == 2)
-				result += (weight[iter] - '0') * 10;
-			else if (check == 3)
-				result += (weight[iter] - '0');
-			else if (check == 4)
-				break;
-
-			check++;
-		}
-
-		if (weight[iter] == '_')
-			if (++tmp == 2)
-				check = 1;
-
-		iter++;
-	}
-
-	return result;
-}
-int SENDKEY(SOCKET hSocket)
-{
-	char key[2] = { 'n','n' };
-
 	if (GetAsyncKeyState('Q') & 0x8000)
 	{
 		key[0] = key[1] = 'q';
 
-		send(hSocket, key, 2, 0);
-		return 1;
+		send(hClient, key, 2, 0);
 	}
 	else
 	{
@@ -110,29 +74,11 @@ int SENDKEY(SOCKET hSocket)
 		else if (GetAsyncKeyState('D') & 0x8000)
 			key[1] = 'd';
 
-
-		send(hSocket, key, 2, 0);
-		return 0;
+		send(hClient, key, size, 0);
 	}
+	fflush(stdin);
 }
-int RECVKEY(SOCKET hSocket, char key[2])
+void RECVKEY(SOCKET hClient, char* key, int size)
 {
-	key[0] = key[1] = 'q';
-	recv(hSocket, key, 2, 0);
-
-	if (key[0] == 'q')
-		return 1;
-	else
-	{
-		if (key[0] != 'n' || key[1] != 'n')
-			printf("\n");
-
-		if (key[0] == 'w' || key[0] == 's')
-			printf("%c ", key[0]);
-
-		if (key[1] == 'a' || key[1] == 'd')
-			printf("%c", key[1]);
-
-		return 0;
-	}
+	recv(hSocket, key, size, 0);
 }

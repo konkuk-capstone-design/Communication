@@ -19,7 +19,7 @@
 #define PORT 4578
 #define PACKET_SIZE 1024
 
-void RECVKEY(char key[2], int size, int socket);
+void RECVKEY(char *key, int size, int socket);
 int fd = 0;
 int main()
 {
@@ -79,7 +79,7 @@ int main()
 
 	return 0;
 }
-void RECVKEY(char key[2], int size, int socket)
+void RECVKEY(int socket, char *key, int size)
 {
 	read(socket, key, size);
 }
