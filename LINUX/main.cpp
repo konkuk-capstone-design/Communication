@@ -63,7 +63,7 @@ int main()
 	char key[2];
 	while (1)
 	{
-		RECVKEY(key, 2, clnt_sock);
+		RECVKEY(clnt_sock, key, 2);
 		if (key[0] == 'q')
 			break;
 		else if ((key[0] == 'n') && (key[1] == 'n'))
