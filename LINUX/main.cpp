@@ -14,8 +14,6 @@
 #include <stdint.h>
 #include <errno.h>
 
-#include <opencv2/opencv.hpp>
-#include <opencv2/imgproc.hpp>
 #include <fstream>
 
 #define PORT 4578
