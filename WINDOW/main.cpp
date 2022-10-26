@@ -45,6 +45,7 @@ int main()
 		key[0] = key[1] = 'n';
 		SENDKEY(hClient, key, 2);
 
+		Sleep(100);
 	}
 
 	closesocket(hListen);
