@@ -64,10 +64,12 @@ int main()
 	char key[2];
 	while (1)
 	{
-		if (RECVKEY(key, clnt_sock))
-		{
-			printf("EXIT\n");
+		RECVKEY(key, 2, clnt_sock);
+		if (key[0] == 'q')
 			break;
+		else if ((key[0] == 'n') && (key[1] == 'n'))
+		{
+
 		}
 		else
 		{
@@ -78,14 +80,7 @@ int main()
 
 	return 0;
 }
-int RECVKEY(char key[2], int socket)
+void RECVKEY(char key[2], int size, int socket)
 {
-	key[0] = key[1] = 'q';
-	read(socket, key, 2);
-
-	if (key[0] == 'q')
-		return 1;
-
-	return 0;
-
+	read(socket, key, size);
 }

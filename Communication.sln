@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arduino_linux", "Arduino_li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LINUX", "LINUX\LINUX.vcxproj", "{B86F1DF1-A846-4C53-85CE-1B80252E6C14}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WINDOW", "WINDOW\WINDOW.vcxproj", "{E5C52A8E-FD60-4D14-9D07-D865866F1572}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -57,6 +59,18 @@ Global
 		{B86F1DF1-A846-4C53-85CE-1B80252E6C14}.Release|x64.Build.0 = Release|x64
 		{B86F1DF1-A846-4C53-85CE-1B80252E6C14}.Release|x86.ActiveCfg = Release|Win32
 		{B86F1DF1-A846-4C53-85CE-1B80252E6C14}.Release|x86.Build.0 = Release|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|ARM.ActiveCfg = Debug|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|x64.ActiveCfg = Debug|x64
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|x64.Build.0 = Debug|x64
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Debug|x86.Build.0 = Debug|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|ARM.ActiveCfg = Release|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|ARM64.ActiveCfg = Release|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|x64.ActiveCfg = Release|x64
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|x64.Build.0 = Release|x64
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|x86.ActiveCfg = Release|Win32
+		{E5C52A8E-FD60-4D14-9D07-D865866F1572}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
