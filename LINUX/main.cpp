@@ -24,7 +24,6 @@ int RECVKEY(char key[2], int socket);
 int fd = 0;
 int main()
 {
-	char SERVER_IP[30];
 	char SERVER_TIP[30];
 	printf("IP: ");
 	scanf("%s", SERVER_TIP);
